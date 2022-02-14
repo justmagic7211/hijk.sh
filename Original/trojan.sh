@@ -199,7 +199,7 @@ function getData()
             PROXY_URL="https://imeizi.me"
             ;;
         4)
-            PROXY_URL="https://bing.imeizi.me"
+            PROXY_URL="https://www.whatsmydns.net"
             ;;
         5)
             read -p " 请输入反代站点(以http或者https开头)：" PROXY_URL
