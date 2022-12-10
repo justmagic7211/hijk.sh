@@ -150,14 +150,6 @@ function getData()
         echo 
         CERT_FILE="/usr/local/etc/trojan/${DOMAIN}.pem"
         KEY_FILE="/usr/local/etc/trojan/${DOMAIN}.key"
-    else
-        resolve=`curl -sL https://ip.gs`
-        res=`echo -n ${resolve} | grep ${IP}`
-        if [[ -z "${res}" ]]; then
-            echo " ${DOMAIN} 解析结果：${resolve}"
-            echo -e " ${RED}域名未解析到当前服务器IP(${IP})!${PLAIN}"
-            exit 1
-        fi
     fi
 
     echo ""
