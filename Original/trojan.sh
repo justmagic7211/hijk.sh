@@ -145,13 +145,6 @@ function getData()
     colorEcho $BLUE " 伪装域名(host)： $DOMAIN"
 
     echo ""
-    if [[ -f ~/trojan.pem && -f ~/trojan.key ]]; then
-        echo -e "${GREEN} 检测到自有证书，将使用其部署${PLAIN}"
-        echo 
-        CERT_FILE="/usr/local/etc/trojan/${DOMAIN}.pem"
-        KEY_FILE="/usr/local/etc/trojan/${DOMAIN}.key"
-    fi
-
     echo ""
     read -p " 请设置trojan密码（不输入则随机生成）:" PASSWORD
     [ -z "$PASSWORD" ] && PASSWORD=`cat /dev/urandom | tr -dc 'a-zA-Z0-9' | fold -w 16 | head -n 1`
