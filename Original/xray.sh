@@ -34,7 +34,7 @@ CONFIG_FILE="/usr/local/etc/xray/config.json"
 OS=`hostnamectl | grep -i system | cut -d: -f2`
 
 V6_PROXY=""
-IP=`curl -sL -4 ip.sb`
+IP=`curl -sL -6 ip.sb`
 if [[ "$?" != "0" ]]; then
     IP=`curl -sL -6 ip.sb`
     V6_PROXY="https://gh.hijk.art/"
@@ -281,7 +281,7 @@ getData() {
             CERT_FILE="/usr/local/etc/xray/${DOMAIN}.pem"
             KEY_FILE="/usr/local/etc/xray/${DOMAIN}.key"
         else
-            resolve=`curl -sL https://ip.gs`
+            resolve=`curl -sL ipget.net`
             res=`echo -n ${resolve} | grep ${IP}`
             if [[ -z "${res}" ]]; then
                 colorEcho ${BLUE}  "${DOMAIN} 解析结果：${resolve}"
